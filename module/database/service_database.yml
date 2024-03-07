@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: mongodb service
+spec:
+  selector:
+    app: mongodb
+  port:
+  - name: mongodb
+    protocal: TCP
+    port: 27017
+    targetport: 27017
+  - name: mongodb-expoter
+    protocal: TCP
+    port: 9216
+    targetport: 9216

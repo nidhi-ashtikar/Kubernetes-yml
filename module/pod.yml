@@ -1,0 +1,19 @@
+apiVersion: V1
+kind: pod
+metadata:
+  name: firstpod
+  labels:
+    type: app
+spec:
+  container:
+  - name: first_container
+    image: nginx
+
+  - name: second_container
+    image: ubuntu
+
+  initcontainer:
+  - name: initcontainer
+    image: ubuntu
+
+

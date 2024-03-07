@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Replicaset
+metadata:
+  name: Replicaset
+  labels:
+    name: Replicaset
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+    - key: type
+      operator: In
+      value:
+      - app
+      - app1
+    - key: type
+      operator: NotIn
+      value:
+      - backend
+  template:
+    metadata:
+      name: pod
+      labels:
+        type: app
+    spec:
+      container:
+      - name: first_container
+        image: nginx
+
+
+#UseCase 
+
+# app = myapp1, type = backend 
+# app = myapp2, type = frontend   = = WANT IN RS 
+# app = myapp1, type = frontend   = = WANT IN RS 

@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ms-one-ingress
+  annotations:
+    kuberneters.io/ingress.class: "nginux"
+spec:
+  rules:
+  - host: microservice-one.com
+    http:
+      paths:
+        path: /
+        backend:
+          servicename: microservice-one-service
+          serviceport: 3200

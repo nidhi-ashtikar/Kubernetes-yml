@@ -1,0 +1,13 @@
+apiVersion: V1
+kind: service
+metadata:
+  name: microservice-one-service
+spec:
+  type: Nodeport
+  selector:
+    app: microservice-one
+  port:
+    protocal: TCP
+    port: 3200
+    targetport: 80 #container port
+    Nodeport: 30008

@@ -1,0 +1,22 @@
+apiVersion: V1
+kind: ReplicationController
+metadata:
+  name: ReplicationController_dev
+  labels:
+    appname: votingapp
+spec:
+  replicas: 5
+  selector:
+    type: app
+  template:
+    metadata:
+      name: firstpod
+      labels:
+        type: app
+    spec:
+      container:
+      - name: first_container
+        image: nginx
+
+
+

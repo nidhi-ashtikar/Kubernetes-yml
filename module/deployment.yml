@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-one
+spec:
+  replicas: 2
+  container:
+  - name: first_container
+    image: nginx
+  template:
+    metadata:
+      labels:
+        app: microservice-one

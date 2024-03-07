@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 2
+  container:
+  - name: first_container
+    image: nginx
+  template:
+    labels:
+      app: mongodb
